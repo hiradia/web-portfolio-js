@@ -1,0 +1,325 @@
+/* Hamburger Menu */
+.menu-icon {
+    color: white !important;
+    font-size: 40px !important;
+    display: flex;
+    cursor: pointer;
+    z-index: 999;
+    position: relative;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Awalnya tersembunyi */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.sidebar a {
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.sidebar a:hover {background-color: rgba(255, 255, 255, 0.2);}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Layar besar */
+@media (min-width: 769px) {
+    .link-container {display: flex;}
+    .menu-icon{display: none !important;}
+}
+
+/* Layar kecil */
+@media (max-width: 768px) {
+    .link-container {display: none !important;}
+    .menu-icon {display: flex !important;}
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: #000;
+    font-size: 20px;
+}
+
+h1, h2 {margin: 0;}
+
+h1 {font-size: 48px;}
+h2 {font-size: 40px;}
+h3 {font-size: 32px;}
+
+a {text-decoration: none;}
+
+.btn {
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #740938;
+    color: white;
+    border-radius: 50px;
+    margin-top: 15px;
+    border: 3px solid white;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #740938;
+    border: 3px solid #740938;
+}
+
+/* Tablet (ukuran layar 600px-1024px) */
+@media (max-width: 1024px) {
+    body {font-size: 20px;}
+    .container  {width: 90%;}
+    .navigasi-container {gap: 10px;}
+}
+
+/* Ukuran layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    body {font-size: 16px;}
+    .why-hire h3, .client-voices h3 {text-align: center !important;}
+    .footer-content {
+        flex-direction: column; 
+        align-items: center;
+        text-align: left;
+        padding-left: 20px;
+        gap: 20px;
+    }
+    .contact-section, .info-section {
+        width: 100%; 
+        align-items: flex-start;
+        padding-left: 0;
+    }
+    .contact-item {
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 6px;
+    }
+}
+
+/* HP (ukuran layar lebih kecil dari 600px) */
+@media (max-width: 600px) {
+    body {font-size: 16px;}
+    .container {
+        width: 90%;
+        padding: 10px;
+        margin: auto;
+    }
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills-icons {gap: 20px;}
+    .why-hire h3, .client-voices h3 {text-align: center !important;}
+    .testimonials, .portfolio-items {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header & Navigasi */
+header{
+    background: url(bg.jpeg) center/cover;
+    min-height: 400px;
+    padding: 40px 20px;
+}
+
+.navigasi-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+.navigasi-container h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.navigasi-container h2 span {color: #A1E3F9;}
+
+.link-container {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+
+.link-container.active {display: block;}
+
+.link-container a {
+    color: white;
+    padding: 15px;
+}
+
+.link-container a:hover {
+    text-shadow: 0 0 5px white;
+    border-bottom: 3px solid #A1E3F9;
+}
+
+.hero {
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Section */
+.about, .skills, .why-hire, .client-voices, .portfolio {padding: 60px 40px;}
+
+.about, .why-hire, .client-voices, .contact, .copyright {background: #f5f5f5;}
+
+.skills, .portfolio {text-align: center; background: #740938; color: white;}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 300px;
+}
+
+.about img {
+    width: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* Skills Section */
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.skills-icons div {text-align: center;}
+
+.skills-icons img {
+    width: 150px;
+    margin-top: 20px;
+}
+
+/* Client Voices */
+.client-voices {text-align: center;}
+
+.client-voices h3 {text-align: left;}
+
+.testimonials {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.testimonials img {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: 3px solid #740938;
+}
+
+/* Portfolio Section */
+.portfolio-items {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.portfolio-items img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+.portfolio-items p {
+    padding: 3px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Footer */
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    gap: 40px;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.contact-item a, .info-item a {color: black;}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.info-item {margin-bottom: 8px;}
+
+/* Ukuran ikon */
+.contact-item img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Copyright Section */
+.copyright {
+    text-align: center;
+    color: #888888;
+    padding: 10px;
+}
